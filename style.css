@@ -409,9 +409,11 @@ section {
 }
 
 .domain-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-md);
     display: block;
+    object-fit: contain;
 }
 
 .domain-title {
