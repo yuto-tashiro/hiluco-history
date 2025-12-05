@@ -377,9 +377,10 @@ section {
 .domain-card {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
     text-align: center;
     transition: all var(--transition-normal);
     position: relative;
@@ -392,7 +393,7 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: var(--bg-gradient-accent);
     transform: scaleX(0);
     transition: transform var(--transition-normal);
@@ -403,23 +404,42 @@ section {
 }
 
 .domain-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-accent-cyan);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-glow-cyan);
+    border-color: rgba(0, 212, 255, 0.3);
 }
 
 .domain-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: var(--spacing-md);
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto var(--spacing-md);
     display: block;
     object-fit: contain;
+    padding: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.domain-card:hover .domain-icon {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
 .domain-title {
     font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.domain-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 /* ===================================
@@ -747,6 +767,15 @@ footer {
     .language-switcher {
         top: var(--spacing-sm);
         right: var(--spacing-sm);
+    }
+
+    .domain-icon {
+        max-width: 150px;
+        padding: var(--spacing-xs);
+    }
+
+    .domain-card {
+        padding: var(--spacing-md);
     }
 
     .timeline-line {
